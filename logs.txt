@@ -1,0 +1,1365 @@
+merge.py[36532] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[36532] info:: INFO :: Envelope '7f509f3f-3396-4156-b3c7-b7f11e7743cd' has been generated and sent to 'The Other Vince' at 'vlanzilotti-ext@philasd.org'.
+merge.py[36532] info:: INFO :: Updating status column to 'Sent'.
+merge.py[36532] info:: INFO :: Updating date column.
+merge.py[36532] info:: INFO :: Updating envelope ID.
+merge.py[36532] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[36532] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: a6d6fdbe-e5cc-4d34-be39-b4e6d1153b08
+Timestamp: Fri, 20 Oct 2023 21:06:27 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1697839200', 'X-RateLimit-Remaining': '2997', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '498', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': 'a6d6fdbe-e5cc-4d34-be39-b4e6d1153b08', 'X-DocuSign-Node': 'DA5DFE181', 'Date': 'Fri, 20 Oct 2023 21:06:27 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[36532] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[36532] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 3a37ed19-8c96-4535-a186-9e6d1fd0da8b
+Timestamp: Fri, 20 Oct 2023 21:06:28 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '3a37ed19-8c96-4535-a186-9e6d1fd0da8b', 'X-DocuSign-Node': 'DA103DFE53', 'Date': 'Fri, 20 Oct 2023 21:06:28 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[36532] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[36532] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 7f50e64d-acb1-4470-9bcc-a6be23059176
+Timestamp: Fri, 20 Oct 2023 21:06:28 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '7f50e64d-acb1-4470-9bcc-a6be23059176', 'X-DocuSign-Node': 'DA1DFE189', 'Date': 'Fri, 20 Oct 2023 21:06:28 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[4208] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[4208] info:: INFO :: Envelope 'a6a0b8d6-9e4d-4914-a71a-58ff36b4a5a6' has been generated and sent to 'The Other Vince' at 'vlanzilotti-ext@philasd.org'.
+merge.py[4208] info:: INFO :: Updating status column to 'Sent'.
+merge.py[4208] info:: INFO :: Updating date column.
+merge.py[4208] info:: INFO :: Updating envelope ID.
+merge.py[4208] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[4208] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 7998ea5b-cd82-4f15-b3e0-50b8f2e475ef
+Timestamp: Fri, 20 Oct 2023 21:19:51 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1697839200', 'X-RateLimit-Remaining': '2995', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '498', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '7998ea5b-cd82-4f15-b3e0-50b8f2e475ef', 'X-DocuSign-Node': 'DA1DFE188', 'Date': 'Fri, 20 Oct 2023 21:19:51 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[4208] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[4208] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 80bfa388-7db3-4d3c-813c-5ba2d1ae18ed
+Timestamp: Fri, 20 Oct 2023 21:19:54 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '80bfa388-7db3-4d3c-813c-5ba2d1ae18ed', 'X-DocuSign-Node': 'DA1DFE5', 'Date': 'Fri, 20 Oct 2023 21:19:54 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[4208] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[4208] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 78337da1-6404-42aa-aa28-92e614fc3239
+Timestamp: Fri, 20 Oct 2023 21:19:54 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '78337da1-6404-42aa-aa28-92e614fc3239', 'X-DocuSign-Node': 'DA1DFE189', 'Date': 'Fri, 20 Oct 2023 21:19:54 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[20224] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[20224] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[20224] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: dbf85b55-b6e5-49c6-8357-00388c5e8f9b
+Timestamp: Fri, 20 Oct 2023 21:22:23 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1697839200', 'X-RateLimit-Remaining': '2994', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': 'dbf85b55-b6e5-49c6-8357-00388c5e8f9b', 'X-DocuSign-Node': 'DA5DFE181', 'Date': 'Fri, 20 Oct 2023 21:22:23 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[20224] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[20224] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 1652388a-0348-4f22-ac4e-aec7e6732193
+Timestamp: Fri, 20 Oct 2023 21:22:24 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '1652388a-0348-4f22-ac4e-aec7e6732193', 'X-DocuSign-Node': 'DA2DFE188', 'Date': 'Fri, 20 Oct 2023 21:22:24 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[20224] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[20224] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 5ebb9299-8d04-4436-b98f-79b5bed9c067
+Timestamp: Fri, 20 Oct 2023 21:22:24 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '5ebb9299-8d04-4436-b98f-79b5bed9c067', 'X-DocuSign-Node': 'DA1DFE4', 'Date': 'Fri, 20 Oct 2023 21:22:24 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[11860] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[11860] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[11860] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 8831a9cc-ade3-480e-93f8-f0618c2f82a6
+Timestamp: Fri, 20 Oct 2023 21:23:49 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1697839200', 'X-RateLimit-Remaining': '2993', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '8831a9cc-ade3-480e-93f8-f0618c2f82a6', 'X-DocuSign-Node': 'DA3DFE176', 'Date': 'Fri, 20 Oct 2023 21:23:49 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[11860] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[11860] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 0a2a519e-063e-4d26-817b-71009571fb5e
+Timestamp: Fri, 20 Oct 2023 21:23:49 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '0a2a519e-063e-4d26-817b-71009571fb5e', 'X-DocuSign-Node': 'DA4DFE182', 'Date': 'Fri, 20 Oct 2023 21:23:49 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[11860] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[11860] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: bbd17331-3aa7-4243-af44-acd3dda2bf06
+Timestamp: Fri, 20 Oct 2023 21:23:50 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': 'bbd17331-3aa7-4243-af44-acd3dda2bf06', 'X-DocuSign-Node': 'DA103DFE53', 'Date': 'Fri, 20 Oct 2023 21:23:50 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[30108] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[30108] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[30108] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 8e867e2c-9bdf-4590-8daa-5d29cf6559c8
+Timestamp: Fri, 20 Oct 2023 21:24:11 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1697839200', 'X-RateLimit-Remaining': '2992', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '498', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '8e867e2c-9bdf-4590-8daa-5d29cf6559c8', 'X-DocuSign-Node': 'DA2DFE188', 'Date': 'Fri, 20 Oct 2023 21:24:11 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[30108] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[30108] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: fa44992c-275a-48bd-9f42-84375ebb4c19
+Timestamp: Fri, 20 Oct 2023 21:24:12 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': 'fa44992c-275a-48bd-9f42-84375ebb4c19', 'X-DocuSign-Node': 'DA2DFE189', 'Date': 'Fri, 20 Oct 2023 21:24:12 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[30108] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[30108] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 58d9ce24-af59-4552-a185-9d1f07cd5118
+Timestamp: Fri, 20 Oct 2023 21:24:13 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '58d9ce24-af59-4552-a185-9d1f07cd5118', 'X-DocuSign-Node': 'DA1DFE189', 'Date': 'Fri, 20 Oct 2023 21:24:13 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[32628] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[32628] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[32628] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 3994cdf7-c059-4f1f-92ac-3adc0e6fe39e
+Timestamp: Fri, 20 Oct 2023 21:28:08 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1697839200', 'X-RateLimit-Remaining': '2989', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '3994cdf7-c059-4f1f-92ac-3adc0e6fe39e', 'X-DocuSign-Node': 'DA3DFE181', 'Date': 'Fri, 20 Oct 2023 21:28:08 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[32628] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[32628] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 171d6b2d-8bae-41e3-837c-5509c90458df
+Timestamp: Fri, 20 Oct 2023 21:28:10 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '171d6b2d-8bae-41e3-837c-5509c90458df', 'X-DocuSign-Node': 'DA2DFE5', 'Date': 'Fri, 20 Oct 2023 21:28:10 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[32628] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[32628] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: fa05924a-b86d-43dc-9887-213b6668df83
+Timestamp: Fri, 20 Oct 2023 21:28:10 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': 'fa05924a-b86d-43dc-9887-213b6668df83', 'X-DocuSign-Node': 'DA4DFE71', 'Date': 'Fri, 20 Oct 2023 21:28:10 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[28340] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[28340] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[28340] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 267a6ac5-dbaa-4577-96ee-bfe16e589a02
+Timestamp: Fri, 20 Oct 2023 21:31:14 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1697839200', 'X-RateLimit-Remaining': '2988', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '267a6ac5-dbaa-4577-96ee-bfe16e589a02', 'X-DocuSign-Node': 'DA2DFE188', 'Date': 'Fri, 20 Oct 2023 21:31:14 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[28340] info:: INFO :: Envelope '1174978d-d23a-4917-9013-567518e3f82c' has been generated and sent to 'Vincent Michael' at 'vlanzilotti@launchphilly.org'.
+merge.py[28340] info:: INFO :: Updating status column to 'Sent'.
+merge.py[28340] info:: INFO :: Updating date column.
+merge.py[28340] info:: INFO :: Updating envelope ID.
+merge.py[28340] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[28340] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 34e75270-985d-4c77-826b-205cdfc2b219
+Timestamp: Fri, 20 Oct 2023 21:31:19 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '34e75270-985d-4c77-826b-205cdfc2b219', 'X-DocuSign-Node': 'DA2DFE189', 'Date': 'Fri, 20 Oct 2023 21:31:19 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[28340] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[28340] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: a63e4673-0063-45ee-964c-1b5c68541e36
+Timestamp: Fri, 20 Oct 2023 21:31:19 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': 'a63e4673-0063-45ee-964c-1b5c68541e36', 'X-DocuSign-Node': 'DA2DFE5', 'Date': 'Fri, 20 Oct 2023 21:31:19 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[7680] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[7680] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[7680] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 22f05ed5-2370-4afe-af27-7a7397c34d8a
+Timestamp: Fri, 20 Oct 2023 21:33:09 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1697839200', 'X-RateLimit-Remaining': '2986', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '22f05ed5-2370-4afe-af27-7a7397c34d8a', 'X-DocuSign-Node': 'DA102DFE52', 'Date': 'Fri, 20 Oct 2023 21:33:09 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[7680] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[7680] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: afe635cb-247f-4cfe-bb0c-4ba87f2ef9da
+Timestamp: Fri, 20 Oct 2023 21:33:11 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': 'afe635cb-247f-4cfe-bb0c-4ba87f2ef9da', 'X-DocuSign-Node': 'DA5DFE181', 'Date': 'Fri, 20 Oct 2023 21:33:11 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[7680] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[7680] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 311, in check_status
+    envelope_results = envelope_api.get_envelope(args['account_id'], envelope_id)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7169, in get_envelope
+    (data) = self.get_envelope_with_http_info(account_id, envelope_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 7246, in get_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'GET',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 373, in request
+    return self.rest_client.GET(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 213, in GET
+    return self.request("GET", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 394c7079-98f0-4586-8354-4d0433034ac1
+Timestamp: Fri, 20 Oct 2023 21:33:12 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '130', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-DocuSign-TraceToken': '394c7079-98f0-4586-8354-4d0433034ac1', 'X-DocuSign-Node': 'DA102DFE52', 'Date': 'Fri, 20 Oct 2023 21:33:12 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"USER_DOES_NOT_BELONG_TO_SPECIFIED_ACCOUNT","message":"The specified User is not a member of the specified Account."}'
+
+merge.py[32128] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[32128] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[32128] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: d2c1e2bf-d7d5-413b-8a8e-e883d8acb86d
+Timestamp: Fri, 20 Oct 2023 21:35:30 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1697839200', 'X-RateLimit-Remaining': '2985', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': 'd2c1e2bf-d7d5-413b-8a8e-e883d8acb86d', 'X-DocuSign-Node': 'DA3DFE176', 'Date': 'Fri, 20 Oct 2023 21:35:30 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[32128] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[32128] info:: INFO :: Updating status column to 'Completed'.
+merge.py[32128] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[32128] info:: INFO :: Updating status column to 'Completed'.
+merge.py[23160] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[23160] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[23160] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: a80e8291-07f7-4376-9084-edd128e049f5
+Timestamp: Mon, 23 Oct 2023 19:02:03 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '68', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1698091200', 'X-RateLimit-Remaining': '2998', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': 'a80e8291-07f7-4376-9084-edd128e049f5', 'X-DocuSign-Node': 'DA2DFE176', 'Date': 'Mon, 23 Oct 2023 19:02:03 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"TEMPLATE_ID_INVALID","message":"Invalid template ID."}'
+
+merge.py[23160] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[23160] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[30824] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[30824] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[30824] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 10eb8d8d-fa4a-49d3-ad9a-39c5776b67c4
+Timestamp: Mon, 23 Oct 2023 19:02:25 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '68', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1698091200', 'X-RateLimit-Remaining': '2997', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '498', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '10eb8d8d-fa4a-49d3-ad9a-39c5776b67c4', 'X-DocuSign-Node': 'DA1DFE5', 'Date': 'Mon, 23 Oct 2023 19:02:25 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"TEMPLATE_ID_INVALID","message":"Invalid template ID."}'
+
+merge.py[30824] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[30824] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[29392] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[29392] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[29392] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 741d25dc-42d8-406d-85b1-e51558c92a95
+Timestamp: Mon, 23 Oct 2023 19:06:12 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '68', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1698091200', 'X-RateLimit-Remaining': '2996', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '741d25dc-42d8-406d-85b1-e51558c92a95', 'X-DocuSign-Node': 'DA3DFE176', 'Date': 'Mon, 23 Oct 2023 19:06:12 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"TEMPLATE_ID_INVALID","message":"Invalid template ID."}'
+
+merge.py[29392] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[29392] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[36176] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[36176] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[36176] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 238, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 13192c24-6f96-45f1-8b06-e88cfd31c659
+Timestamp: Mon, 23 Oct 2023 19:19:47 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '153', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1698091200', 'X-RateLimit-Remaining': '2995', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '13192c24-6f96-45f1-8b06-e88cfd31c659', 'X-DocuSign-Node': 'DA1DFE189', 'Date': 'Mon, 23 Oct 2023 19:19:47 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"INVALID_EMAIL_ADDRESS_FOR_RECIPIENT","message":"The email address for the recipient is invalid. The recipient Id follows. Recipient Id: 1"}'
+
+merge.py[36176] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[36176] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[12700] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[12700] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[12700] info:: INFO :: Envelope '2d6995c9-0687-4013-a626-f4e6588fb216' has been generated and sent to 'Vincenzo Lanzilotti' at 'vlanzilotti-ext@philasd.org'.
+merge.py[12700] info:: INFO :: Updating status column to 'Sent'.
+merge.py[12700] info:: INFO :: Updating date column.
+merge.py[12700] info:: INFO :: Updating envelope ID.
+merge.py[12700] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[12700] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[38564] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[38564] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[38564] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[38564] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[39672] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[39672] info:: INFO :: Envelope '828eba9f-c91c-4c29-802a-af6e8bf46b65' has been generated and sent to 'Jennifer DEmilio' at 'jennifer.demilio@yahoo.com'.
+merge.py[39672] info:: INFO :: Updating status column to 'Sent'.
+merge.py[39672] info:: INFO :: Updating date column.
+merge.py[39672] info:: INFO :: Updating envelope ID.
+merge.py[39672] info:: INFO :: Envelope 'b43cc6c6-1703-432a-85f5-30d64aa97195' has been generated and sent to 'Vince Lanzilotti' at 'vlanzilotti@launchphilly.org'.
+merge.py[39672] info:: INFO :: Updating status column to 'Sent'.
+merge.py[39672] info:: INFO :: Updating date column.
+merge.py[39672] info:: INFO :: Updating envelope ID.
+merge.py[39672] info:: INFO :: Envelope 'd7d23c42-c5f6-4121-a884-827ffd6deec7' has been generated and sent to 'Donovan Holmes' at 'dholmes-ext@philasd.org'.
+merge.py[39672] info:: INFO :: Updating status column to 'Sent'.
+merge.py[39672] info:: INFO :: Updating date column.
+merge.py[39672] info:: INFO :: Updating envelope ID.
+merge.py[39672] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[39672] info:: INFO :: Envelope '96dea614-6576-4b62-aeb7-c9ede5c9f12a' has been generated and sent to 'Vincenzo Lanzilotti' at 'vlanzilotti-ext@philasd.org'.
+merge.py[39672] info:: INFO :: Updating status column to 'Sent'.
+merge.py[39672] info:: INFO :: Updating date column.
+merge.py[39672] info:: INFO :: Updating envelope ID.
+merge.py[39672] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[39672] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[30488] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[30488] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[30488] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[30488] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[30488] info:: INFO :: Updating status column to 'Completed'.
+merge.py[18988] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[18988] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[18988] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[18988] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[10304] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[10304] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[10304] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[10304] info:: INFO :: Updating status column to 'Completed'.
+merge.py[10304] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[35224] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[35224] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[35224] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[35224] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[34832] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[34832] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[34832] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[34832] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[31132] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[31132] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[31132] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[31132] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[15804] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[15804] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[15804] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[15804] info:: INFO :: Updating status column to 'Completed'.
+merge.py[15804] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[39296] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[39296] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[39296] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[39296] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[37576] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[37576] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[37576] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[37576] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[14636] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[14636] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[14636] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[14636] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[9708] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[9708] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[9708] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[9708] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[848] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[848] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[848] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[848] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[26220] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[26220] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[26220] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[26220] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[42752] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[42752] info:: INFO :: Envelope 'cd75bb15-e121-4bf9-93a8-f695515e9e73' has been generated and sent to 'Jennifer DEmilio' at 'jennifer.demilio@yahoo.com'.
+merge.py[42752] info:: INFO :: Updating status column to 'Sent'.
+merge.py[42752] info:: INFO :: Updating date column.
+merge.py[42752] info:: INFO :: Updating envelope ID.
+merge.py[42752] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[42752] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[42752] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[46992] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[46992] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[46992] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[46992] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[42928] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[42928] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[42928] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[42928] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[40052] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[40052] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[40052] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[40052] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[30196] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[30196] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[30196] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[30196] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[29796] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[29796] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[29796] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[29796] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[43332] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[43332] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[43332] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[43332] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[46972] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[46972] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[46972] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[46972] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[33676] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[33676] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[33676] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[33676] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[44008] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[44008] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[44008] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[44008] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[18908] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[18908] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[18908] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[18908] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[15052] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[15052] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[15052] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[15052] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[2432] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[2432] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[2432] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[2432] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[41668] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[41668] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 240, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: a038f85f-0f40-4542-89ed-c793fcf45b9e
+Timestamp: Thu, 26 Oct 2023 15:27:24 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '68', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1698336000', 'X-RateLimit-Remaining': '2999', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': 'a038f85f-0f40-4542-89ed-c793fcf45b9e', 'X-DocuSign-Node': 'DA1FE146', 'Date': 'Thu, 26 Oct 2023 15:27:24 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"TEMPLATE_ID_INVALID","message":"Invalid template ID."}'
+
+merge.py[41668] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[41668] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[41668] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[43300] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[43300] info:: INFO :: Envelope '23e5831e-501f-4b36-afd5-b240b27a704b' has been generated and sent to 'Jennifer DEmilio' at 'jennifer.demilio@yahoo.com'.
+merge.py[43300] info:: INFO :: Updating status column to 'Sent'.
+merge.py[43300] info:: INFO :: Updating date column.
+merge.py[43300] info:: INFO :: Updating envelope ID.
+merge.py[43300] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[43300] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[43300] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[44512] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[44512] info:: INFO :: Envelope '3196d2bb-0b47-4203-8929-b7e479cbc7ae' has been generated and sent to 'Vince Lanzilotti' at 'vlanzilotti@launchphilly.org'.
+merge.py[44512] info:: INFO :: Updating status column to 'Sent'.
+merge.py[44512] info:: INFO :: Updating date column.
+merge.py[44512] info:: INFO :: Updating envelope ID.
+merge.py[44512] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[44512] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[44512] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[4128] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[4128] info:: INFO :: Envelope '38fd7c0c-c63c-4a94-834c-0d381b217e5f' has been generated and sent to 'The Other Vince' at 'vlanzilotti-ext@philasd.org'.
+merge.py[4128] info:: INFO :: Updating status column to 'Sent'.
+merge.py[4128] info:: INFO :: Updating date column.
+merge.py[4128] info:: INFO :: Updating envelope ID.
+merge.py[4128] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[4128] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[4128] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[17876] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[17876] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[17876] info:: INFO :: Envelope '1efbcc82-c77f-4b0c-aeb6-41cc0abe8a7a' has been generated and sent to 'Vincent Michael' at 'vlanzilotti@launchphilly.org'.
+merge.py[17876] info:: INFO :: Updating status column to 'Sent'.
+merge.py[17876] info:: INFO :: Updating date column.
+merge.py[17876] info:: INFO :: Updating envelope ID.
+merge.py[17876] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[17876] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[44304] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[44304] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[44304] info:: INFO :: Envelope '71f12bc2-0ed5-4790-a5a4-d08203c8b6f8' has been generated and sent to 'Vincent Michael' at 'vlanzilotti@launchphilly.org'.
+merge.py[44304] info:: INFO :: Updating status column to 'Sent'.
+merge.py[44304] info:: INFO :: Updating date column.
+merge.py[44304] info:: INFO :: Updating envelope ID.
+merge.py[44304] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[44304] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[39652] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[39652] info:: INFO :: Envelope 'e4dbee15-2c7d-44ff-8a4c-8a1ac01aec00' has been generated and sent to 'Jennifer DEmilio' at 'jennifer.demilio@yahoo.com'.
+merge.py[39652] info:: INFO :: Updating status column to 'Sent'.
+merge.py[39652] info:: INFO :: Updating date column.
+merge.py[39652] info:: INFO :: Updating envelope ID.
+merge.py[39652] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[39652] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[39652] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[46680] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[46680] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[46680] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[46680] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[29148] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[29148] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[29148] exception:: ERROR :: EXCEPTION!
+Traceback (most recent call last):
+  File "C:\Users\Vincent Lanzilotti\Documents\digs\merge.py", line 241, in create_the_envelope
+    results = envelope_api.create_envelope(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1348, in create_envelope
+    (data) = self.create_envelope_with_http_info(account_id, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\apis\envelopes_api.py", line 1431, in create_envelope_with_http_info
+    return self.api_client.call_api(resource_path, 'POST',
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 350, in call_api
+    return self.__call_api(resource_path, method,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 165, in __call_api
+    response_data = self.request(method, url,
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_client.py", line 393, in request
+    return self.rest_client.POST(url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 246, in POST
+    return self.request("POST", url,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Vincent Lanzilotti\AppData\Local\Programs\Python\Python311\Lib\site-packages\docusign_esign\client\api_response.py", line 208, in request
+    raise ApiException(http_resp=r)
+docusign_esign.client.api_exception.ApiException: (400)
+Reason: Bad Request
+Trace-Token: 09e5d7e6-d301-43a1-82de-24db16e1c52b
+Timestamp: Thu, 26 Oct 2023 16:46:49 GMT
+HTTP response headers: HTTPHeaderDict({'Cache-Control': 'no-cache', 'Content-Length': '68', 'Content-Type': 'application/json; charset=utf-8', 'X-Content-Type-Options': 'nosniff', 'X-RateLimit-Reset': '1698339600', 'X-RateLimit-Remaining': '2992', 'X-RateLimit-Limit': '3000', 'X-BurstLimit-Remaining': '499', 'X-BurstLimit-Limit': '500', 'X-DocuSign-TraceToken': '09e5d7e6-d301-43a1-82de-24db16e1c52b', 'X-DocuSign-Node': 'DA3FE82', 'Date': 'Thu, 26 Oct 2023 16:46:49 GMT', 'Strict-Transport-Security': 'max-age=31536000; includeSubDomains'})
+HTTP response body: b'{"errorCode":"TEMPLATE_ID_INVALID","message":"Invalid template ID."}'
+
+merge.py[29148] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[29148] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[16524] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[16524] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[16524] info:: INFO :: Envelope '565bf186-5f86-466d-8cac-ef1d8aee012e' has been generated and sent to 'Vincent Michael' at 'vlanzilotti@launchphilly.org'.
+merge.py[16524] info:: INFO :: Updating status column to 'Sent'.
+merge.py[16524] info:: INFO :: Updating date column.
+merge.py[16524] info:: INFO :: Updating envelope ID.
+merge.py[16524] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[16524] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[35132] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[35132] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[35132] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[35132] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[35132] info:: INFO :: Updating status column to 'Completed'.
+merge.py[44288] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[44288] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[44288] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[44288] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[36232] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[36232] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[36232] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[36232] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[6468] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[6468] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[6468] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[6468] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[11704] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[11704] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[11704] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[11704] info:: INFO :: Updating status column to 'Voided'.
+merge.py[11704] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[18064] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[18064] info:: INFO :: Envelope '6b56b22c-c056-4707-b8ec-b42108fa6d31' has been generated and sent to 'Jennifer Testing2' at 'jennifer.demilio@yahoo.com'.
+merge.py[18064] info:: INFO :: Updating status column to 'Sent'.
+merge.py[18064] info:: INFO :: Updating date column.
+merge.py[18064] info:: INFO :: Updating envelope ID.
+merge.py[18064] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[18064] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[18064] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[3736] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[3736] info:: INFO :: Envelope '5a4d0494-1ce2-49bd-9ed9-ddbe413f3021' has been generated and sent to 'Jennifer Testing23' at 'jennifer.demilio@yahoo.com'.
+merge.py[3736] info:: INFO :: Updating status column to 'Sent'.
+merge.py[3736] info:: INFO :: Updating date column.
+merge.py[3736] info:: INFO :: Updating envelope ID.
+merge.py[3736] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[3736] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[3736] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[11020] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[11020] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[15976] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[15976] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[15976] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[15976] info:: INFO :: Updating status column to 'Voided'.
+merge.py[15976] info:: INFO :: Updating status column to 'Voided'.
+merge.py[15976] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[17576] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[17576] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[17576] info:: INFO :: Envelope '95b68693-d0ec-490d-8291-e5ec0ae30eb8' has been generated and sent to 'Vincenzo Lanzilotti' at 'vlanzilotti-ext@philasd.org'.
+merge.py[17576] info:: INFO :: Updating status column to 'Sent'.
+merge.py[17576] info:: INFO :: Updating date column.
+merge.py[17576] info:: INFO :: Updating envelope ID.
+merge.py[17576] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[17576] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[12676] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[12676] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[12676] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[12676] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[7964] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[7964] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[7964] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[7964] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[11036] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[11036] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[11036] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[11036] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[6648] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[6648] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[6648] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[6648] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[7740] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[7740] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[7740] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[7740] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[15756] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[15756] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[15756] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[15756] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[13404] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[13404] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[13404] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[13404] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[17980] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[17980] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[17980] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[17980] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[18956] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[18956] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[6472] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[6472] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[6472] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[6472] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[10712] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[10712] info:: INFO :: Retrieving results from Google Sheet.
+merge.py[10712] info:: INFO :: Retrieving envelope IDs and statuses.
+merge.py[10712] info:: INFO :: Retrieving envelope IDs and statuses.
